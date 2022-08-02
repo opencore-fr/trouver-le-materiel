@@ -183,7 +183,7 @@ Une fois que l'application a été corrctement installée et lancée, you should
 
 ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/ocsysinfo-example.b6fb71ae.png)
 
-From here, you can type in `d` and press `ENTER`/`RETURN`, after, you should be greeted with a similar-looking screen:
+A partir d'ici, vous pouvez appuyer sur  `d` et appuyer sur `ENTER`/`RETURN`, après ça, vous devriez être accueilli par un écran similaire :
 
 ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/ocsysinfo-hwdisc.0552a0c3.png)
 
@@ -218,14 +218,15 @@ Crédit pour cette image: [ThatCopy](https://github.com/ThatCopy)
 Pavé tactile: `I2C` <br /> Clavier: `PS/2`
 
 Crédit pour cette image: [Mahas](https://github.com/Mahas1)
-:::
 
-### Pavé tactile PS/2
-![]([./images/finding-hardware-md/id-ps2-ocsysinfo.png)](https://dortania.github.io/OpenCore-Install-Guide/assets/img/id-ps2-ocsysinfo.ea64d0ff.png))
+
+<details>
+ <summary>Pavé tactile PS/2</summary>
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/id-ps2-ocsysinfo.ea64d0ff.png)
 Pavé tactile: `PS/2` <br /> Clavier: `PS/2`
 
 Crédit pour cette image: [Tasty0](https://github.com/Tasty0)
-:::
+</details>
 
 ### Codec audios
 
