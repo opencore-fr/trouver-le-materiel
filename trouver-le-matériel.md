@@ -1,39 +1,39 @@
-# Finding your hardware
+# Trouver votre matériel
 
-This section is mostly a mini-guide on how to find what hardware you're currently running; this is mainly relevant for laptop and prebuilt users as hardware specs are a bit more difficult to obtain. You can skip this page and head to [Creating the USB](./installer-guide/) if you already know what hardware you have.
+Cette section est un petit guide sur comment trouver le matériel que vous utilisez actuellement; c'est surtout pertinant pour les utilisateur de PC Portables et ceux qui ont des PC Pré-construitsou le matériel est un peu plus difficile a trouver. Vous pouvez passer cette page et aller a [Créer la clé usb](./installer-guide/) si vous savez déjà quel matériel vous avez.
 
-For this, we'll assume you have Windows or Linux installed:
+Pour ceci, nous partons du principe que vous avez Windows ou Linux de déjà installé.
 
 [[toc]]
 
-## Finding Hardware using Windows
+## Trouver votre matériel avec Windows
 
-For this we mainly have 2 options:
+Pour ça nous avons 2 choix principaux : 
 
-* Windows' built-in Device Manager
+* Gestionnaire de périphériques de Windows
 * [AIDA64](https://www.aida64.com/downloads)
 
-Due to the easier to use GUI, we recommend downloading AIDA64 and running this as it's much easier to grab specs. However we'll show you both methods for obtaining hardware specs.
+Avec l'interface graphique plus facile a prendre en main, nous recommandons de télécharger AIDA64 et de s'en servir car il est bien plus facile de trouver les sépcifications de votre PC.. On va tout de même vous montrer les 2 manières de trouver votre matériel.
 
-### CPU Model
+### Modèle de processeur (CPU)
 
 | AIDA64                                                 | Device Manager                                                |
 |:-------------------------------------------------------|:--------------------------------------------------------------|
-| ![](./images/finding-hardware-md/cpu-model-aida64.png) | ![](./images/finding-hardware-md/cpu-model-devicemanager.png) |
+| ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/cpu-model-aida64.aace72f2.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/cpu-model-devicemanager.e6eedd26.png) |
 
-### GPU Model
+### Modèle de carte graphique (GPU)
 
 | AIDA64                                                 | DeviceManager                                                 |
 |:-------------------------------------------------------|:--------------------------------------------------------------|
-| ![](./images/finding-hardware-md/GPU-model-aida64.png) | ![](./images/finding-hardware-md/GPU-model-devicemanager.png) |
+| ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/GPU-model-aida64.b3b2cc00.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/GPU-model-devicemanager.677068d3.png) |
 
-### Chipset Model
+### Modèle de 'Chipset'
 
 | AIDA64                                                     | DeviceManager                                                     |
 |:-----------------------------------------------------------|:------------------------------------------------------------------|
-| ![](./images/finding-hardware-md/chipset-model-aida64.png) | ![](./images/finding-hardware-md/chipset-model-devicemanager.png) |
+| ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/chipset-model-aida64.782706ee.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/chipset-model-devicemanager.57f025ae.png) |
 
-* Note: Intel SOC based CPUs will have the chipset and other features already on the same die instead of being dedicated chips. This means trying to detect the exact chipset is a bit more difficult
+* Note: Les processeurs basés sur du Intel SoC (**S**ystem **O**n a **C**hip  auront le chipset et d'autres fonctionnalités déjà sur le même bloc au lieu d'être des puces dédiées. Cela signifie que détecter le chipset exsact sera plus difficile.
 
 ### Keyboard, Trackpad and Touchscreen Connection Type
 
