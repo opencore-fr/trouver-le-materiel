@@ -52,7 +52,7 @@ Malheuresement, AIDA64 ne donne aucune infos utile(s) pour les dispositifs de po
 
 Sleon le périphérique, ça devrait montrer plusieurs connextion. Le principal ou on doit garder un oeil dessus est :
   
-::: details SMBus
+### SMBus
   
 Ceux-ci apparaîtront comme un périphérique PCI simple tel que `Synaptics SMBus Driver` ou `ELAN SMBus Driver`
 
@@ -62,26 +62,20 @@ Ceux-ci apparaîtront comme un périphérique PCI simple tel que `Synaptics SMBu
 
 Comme vous pouvez le voir, on a 2 périphériques Synaptics dans l'image de gauche, Mais, si on regarde de plus près, on voit que l'appareil du haut est en PS2, alors  que celui du bas est en SMBus. Bien que vous puissiez utiliser le pavé tactile dans les deux modes, le mode SMBus offre la plupart du temps une meilleure prise en charge et une meilleure précision des gestes.
 
-:::
-
-::: details USB
+### USB
 
 | Appareil par type | Appareil par connection |
 | :--- | :--- |
 | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/USB-trackpad-normal.4415be9a.png) | ![](![image](https://user-images.githubusercontent.com/106166359/182404319-4ae0a03d-af78-4b05-a542-e1f3a35cfa0c.png)
 
 
-Ceux si ont être notés :  `Pavé tactile conforme PS2 (approximatif)`, mais aussi sous USB quand on bascule notre vue de connexion sur `Appareil par connexion`
+Ceux si sont notés : `Pavé tactile conforme PS2 (approximatif)`, mais aussi sous USB quand on bascule notre vue de connexion sur `Appareil par connexion`
 
-:::
-
-::: details I2C
+### I2C
 
 ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/i2c-trackpad.3277ba42.png)
 Ceux la apparaîtront presque toujours comme des périphériques Microsoft HID, mais peuvent également apparaître comme d'autres trackpads. Mais, ils apparaîtront toujours sous I2C.
 
-
-:::
   
 ### Codec audios
 
@@ -212,21 +206,21 @@ En dehors les noms de modèles, il liste également le nom de code des GPU, les 
 
 ### Clavier, pavé tactile et type de connexion d'écran tactile
 
-::: details Pavé tactile SMBus
+### Pavé tactile SMBus
 ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/id-smbus-ocsysinfo.b4de10bd.png)
 Pavé tactile : `SMBus` <br /> Clavier: `PS/2`
 
 Crédit pour cette image: [ThatCopy](https://github.com/ThatCopy)
-:::
 
-::: details Pavé tactile I2
+### Pavé tactile I2C
+
 ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/id-i2c-ocsysinfo.4a83c466.png)
 Pavé tactile: `I2C` <br /> Clavier: `PS/2`
 
 Crédit pour cette image: [Mahas](https://github.com/Mahas1)
 :::
 
-::: details Pavé tactile PS/2
+### Pavé tactile PS/2
 ![]([./images/finding-hardware-md/id-ps2-ocsysinfo.png)](https://dortania.github.io/OpenCore-Install-Guide/assets/img/id-ps2-ocsysinfo.ea64d0ff.png))
 Pavé tactile: `PS/2` <br /> Clavier: `PS/2`
 
