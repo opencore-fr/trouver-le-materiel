@@ -33,7 +33,7 @@ Avec l'interface graphique plus facile a prendre en main, nous recommandons de t
 |:-----------------------------------------------------------|:------------------------------------------------------------------|
 | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/chipset-model-aida64.782706ee.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/chipset-model-devicemanager.57f025ae.png) |
 
-* Note: Les processeurs basés sur du Intel SoC (**s**ystem **o**n a **c**hip  will have the chipset and other features already on the same die instead of being dedicated chips. This means trying to detect the exact chipset is a bit more difficult
+* Note: Les processeurs basés sur du Intel SoC (**S**ystem **O**n a **C**hip  auront le chipset et d'autres fonctionnalités déjà sur le même bloc au lieu d'être des puces dédiées. Cela signifie que détecter le chipset exsact sera plus difficile.
 
 ### Keyboard, Trackpad and Touchscreen Connection Type
 
