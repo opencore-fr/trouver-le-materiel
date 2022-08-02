@@ -1,19 +1,19 @@
-# Finding your hardware
+# Trouver votre matériel
 
-This section is mostly a mini-guide on how to find what hardware you're currently running; this is mainly relevant for laptop and prebuilt users as hardware specs are a bit more difficult to obtain. You can skip this page and head to [Creating the USB](./installer-guide/) if you already know what hardware you have.
+Cette section est un petit guide sur comment trouver le matériel que vous utilisez actuellement; c'est surtout pertinant pour les utilisateur de PC Portables et ceux qui ont des PC Pré-construitsou le matériel est un peu plus difficile a trouver. Vous pouvez passer cette page et aller a [Créer la clé usb](./installer-guide/) si vous savez déjà quel matériel vous avez.
 
-For this, we'll assume you have Windows or Linux installed:
+Pour ceci, nous partons du principe que vous avez Windows ou Linux de déjà installé.
 
 [[toc]]
 
-## Finding Hardware using Windows
+## Trouver votre matériel avec Windows
 
-For this we mainly have 2 options:
+Pour ça nous avons 2 choix principaux : 
 
-* Windows' built-in Device Manager
+* Gestionnaire de périphériques de Windows
 * [AIDA64](https://www.aida64.com/downloads)
 
-Due to the easier to use GUI, we recommend downloading AIDA64 and running this as it's much easier to grab specs. However we'll show you both methods for obtaining hardware specs.
+Avec l'interface graphique plus facile a prendre en main, nous recommandons de télécharger AIDA64 et de s'en servir car il est bien plus facile de trouver les sépcifications de votre PC.. On va tout de même vous montrer les 2 manières de trouver votre matériel.
 
 ### CPU Model
 
