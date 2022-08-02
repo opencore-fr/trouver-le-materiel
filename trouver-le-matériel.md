@@ -1,6 +1,6 @@
 # Trouver votre matériel
 
-Cette section est un petit guide sur comment trouver le matériel que vous utilisez actuellement; c'est surtout pertinant pour les utilisateur de PC Portables et ceux qui ont des PC Pré-construitsou le matériel est un peu plus difficile a trouver. Vous pouvez passer cette page et aller a [Créer la clé usb](./installer-guide/) si vous savez déjà quel matériel vous avez.
+Cette section est un petit guide sur comment trouver le matériel que vous utilisez actuellement; c'est surtout pertinant pour les utilisateur de PC Portables et ceux qui ont des PC Pré-construitsou le matériel est un peu plus difficile a trouver. Vous pouvez passer cette page et aller a [Créer la clé usb](https://https://opencore.pressynou.ch/creation-cle-usb/cree-la-cle-usb) si vous savez déjà quel matériel vous avez.
 
 Pour ceci, nous partons du principe que vous avez Windows ou Linux de déjà installé.
 
