@@ -15,17 +15,17 @@ Pour ça nous avons 2 choix principaux :
 
 Avec l'interface graphique plus facile a prendre en main, nous recommandons de télécharger AIDA64 et de s'en servir car il est bien plus facile de trouver les sépcifications de votre PC.. On va tout de même vous montrer les 2 manières de trouver votre matériel.
 
-### Modèle de processeur
+### Modèle de processeur (CPU)
 
 | AIDA64                                                 | Device Manager                                                |
 |:-------------------------------------------------------|:--------------------------------------------------------------|
 | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/cpu-model-aida64.aace72f2.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/cpu-model-devicemanager.e6eedd26.png) |
 
-### GPU Model
+### Modèle de carte graphique (GPU)
 
 | AIDA64                                                 | DeviceManager                                                 |
 |:-------------------------------------------------------|:--------------------------------------------------------------|
-| ![](./images/finding-hardware-md/GPU-model-aida64.png) | ![](./images/finding-hardware-md/GPU-model-devicemanager.png) |
+| ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/GPU-model-aida64.b3b2cc00.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/GPU-model-devicemanager.677068d3.png) |
 
 ### Chipset Model
 
