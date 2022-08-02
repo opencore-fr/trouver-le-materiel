@@ -4,7 +4,6 @@ Cette section est un petit guide sur comment trouver le matériel que vous utili
 
 Pour ceci, nous partons du principe que vous avez Windows ou Linux de déjà installé.
 
-[[toc]]
 
 ## Trouver votre matériel avec Windows
 
@@ -17,228 +16,231 @@ Avec l'interface graphique plus facile a prendre en main, nous recommandons de t
 
 ### Modèle de processeur (CPU)
 
-| AIDA64                                                 | Device Manager                                                |
+| AIDA64                                                 | Gestionnaire de périphériques                                 |
 |:-------------------------------------------------------|:--------------------------------------------------------------|
 | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/cpu-model-aida64.aace72f2.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/cpu-model-devicemanager.e6eedd26.png) |
 
 ### Modèle de carte graphique (GPU)
 
-| AIDA64                                                 | DeviceManager                                                 |
+| AIDA64                                                 | Gestionnaire de périphériques                                 |
 |:-------------------------------------------------------|:--------------------------------------------------------------|
 | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/GPU-model-aida64.b3b2cc00.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/GPU-model-devicemanager.677068d3.png) |
 
 ### Modèle de 'Chipset'
 
-| AIDA64                                                     | DeviceManager                                                     |
+| AIDA64                                                     | Gestionnaire de périphériques                                     |
 |:-----------------------------------------------------------|:------------------------------------------------------------------|
 | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/chipset-model-aida64.782706ee.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/chipset-model-devicemanager.57f025ae.png) |
 
 * Note: Les processeurs basés sur du Intel SoC (**S**ystem **O**n a **C**hip  auront le chipset et d'autres fonctionnalités déjà sur le même bloc au lieu d'être des puces dédiées. Cela signifie que détecter le chipset exsact sera plus difficile.
 
-### Keyboard, Trackpad and Touchscreen Connection Type
+### Clavier, pavé tactile et type de connexion d'écran tactile
 
-| DeviceManager                                                      |
+| Gestionnaire de périphériques                                      |
 |:-------------------------------------------------------------------|
-| ![](./images/finding-hardware-md/trackpad-model-devicemanager.png) |
+| ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/trackpad-model-devicemanager.4e4c4e97.png) |
 
-AIDA64 unfortunately doesn't provide any useful info regarding pointer devices, so we recommend using DeviceManager for this.
+Malheuresement, AIDA64 ne donne aucune infos utile(s) pour les dispositifs de pointage, alors on recommande l'utilisation du gestiooonnaire de périphériques pour ça.
 
-* You can find these devices under the following:
-  * `Human Interface Devices`
-  * `Keyboards`
-  * `Mice and other Pointer Devices`
+* Vous pouvez trouvez ces appareils dans la catégorie suivante :
+  * `Interfaces Homme-machine`
+  * `Claviers`
+  * `Souris et autres dispositifs de pointage`
 
-* To view the exact connection type of the device, select the pointer device then enter `View -> Device by Connection`. This will clarify whether it's over PS2, I2C, SMBus, USB, etc
+* Pour voir le type de connexion exsact, sélectionnez le périphérique de pointage exsact puis allez dans `Affichage -> Appareils par connection`. Ça clarifiera si c'est du PS2, I2C, SMBus, USB, etc.
 
-Depending on the device, it may show up under multiple names and connections. The main ones to keep an eye on:
+
+Sleon le périphérique, ça devrait montrer plusieurs connextion. Le principal ou on doit garder un oeil dessus est :
   
 ::: details SMBus
   
-These will show up as a straight PCI device such as `Synaptics SMBus Driver` or `ELAN SMBus Driver`
+Ceux-ci apparaîtront comme un périphérique PCI simple tel que `Synaptics SMBus Driver` ou `ELAN SMBus Driver`
 
-* Synaptics devices will show up under both PS2 under `Synaptics PS2 device`/`Synaptics Pointing Device` and PCI as `Synaptics SMBus Driver`
+* Les périphériques Synaptics apparaîtrons sous les deux PS2 comme `Périphérique PS2 Synaptics`/`Périphérique de pointage Synaptics` et PCI comme `Pilote SMBus Synaptics`
+ 
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/Windows-SMBus-Device.c4154ce4.png)
 
-![](./images/finding-hardware-md/Windows-SMBus-Device.png)
-
-As you can see, we get 2 Synaptics devices in the left image, however if we take a closer look we'll see the top device is PS2, while the bottom one is SMBus. While you can use the trackpad in either mode, SMBus generally provides better gesture support and accuracy.
+Comme vous pouvez le voir, on a 2 périphériques Synaptics dans l'image de gauche, Mais, si on regarde de plus près, on voit que l'appareil du haut est en PS2, alors  que celui du bas est en SMBus. Bien que vous puissiez utiliser le pavé tactile dans les deux modes, le mode SMBus offre la plupart du temps une meilleure prise en charge et une meilleure précision des gestes.
 
 :::
 
 ::: details USB
 
-| Device by Type | Device by Connection |
+| Appareil par type | Appareil par connection |
 | :--- | :--- |
-| ![](./images/finding-hardware-md/USB-trackpad-normal.png) | ![](./images/finding-hardware-md/USB-trackpad-by-connection.png)
+| ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/USB-trackpad-normal.4415be9a.png) | ![](![image](https://user-images.githubusercontent.com/106166359/182404319-4ae0a03d-af78-4b05-a542-e1f3a35cfa0c.png)
 
-These will show up as a `PS2 Compliant Trackpad`, as well under USB when we switch our connection view to `Device by Connection`
+
+Ceux si ont être notés :  `Pavé tactile conforme PS2 (approximatif)`, mais aussi sous USB quand on bascule notre vue de connexion sur `Appareil par connexion`
 
 :::
 
 ::: details I2C
 
-![](./images/finding-hardware-md/i2c-trackpad.png)
-These will almost always show up as a Microsoft HID device, though can appear as other trackpads as well. They will always show up under I2C though.
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/i2c-trackpad.3277ba42.png)
+Ceux la apparaîtront presque toujours comme des périphériques Microsoft HID, mais peuvent également apparaître comme d'autres trackpads. Mais, ils apparaîtront toujours sous I2C.
+
 
 :::
   
-### Audio Codec
+### Codec audios
 
-| AIDA64                                                        | DeviceManager                                                     |
+| AIDA64                                                        | Gestionnaire de périphériques                                     |
 |:--------------------------------------------------------------|:------------------------------------------------------------------|
-| ![](./images/finding-hardware-md/audio-controller-aida64.png) | ![](./images/finding-hardware-md/audio-controller-aida64.png.png) |
+| ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/audio-controller-aida64.c4a94a0b.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/audio-controller-aida64.png.bf36cd98.png) |
 
-Due to how certain OEMs present device names, the most accurate info you can get with DeviceManager is via the PCI ID(ie. pci 14F1,50F4). This means you'll need to google the ID and figure out the exact device ID, however AIDA64 can present the name properly which is quite a bit easier on the end user.
+A cause de la manière dont certains OEM font les noms de périphériques, les infos les plus précises que vous pouvez obtenir avec le gestionnaire de périphériques sont via l'ID PCI (c'est-à-dire pci 14F1,50F4). Cela signifie que vous devrez rechercher l'ID sur Google et déterminer l'ID exact de l'appareil, mais AIDA64 peut présenter le nom correctement, ce qui est un peu plus facile pour vous.
 
-### Network Controller models
+### Modèle de controlleurs réseaux
 
-| AIDA64                                                 | Device Manager                                                |
+| AIDA64                                                 | Gestionnaire de périphériques                                 |
 |:-------------------------------------------------------|:--------------------------------------------------------------|
-| ![](./images/finding-hardware-md/nic-model-aida64.png) | ![](./images/finding-hardware-md/nic-model-devicemanager.png) |
+| ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/nic-model-aida64.794005c8.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/nic-model-devicemanager.9bc7b615.png) |
 
-Due to how certain OEMs present device names, the most accurate info you can get with Device Manager is via the PCI ID (ie. `PCI\VEN_14E4&DEV_43A0` corresponds to a vendor ID of `14E4` and a device ID of `43A0`). This means you'll need to Google the ID and figure out the exact device ID; however, AIDA64 can present the name properly which can be quite a bit easier.
+A cause de la manière dont certains OEM font les noms de périphériques, les infos les plus précises que vous pouvez obtenir avec le gestionnaire de périphériques sont via l'ID PCI (c'est-à-dire `PCI\VEN_14E4&DEV_43A0` correspond a un ID de marque of `14E4` et un ID d'appareil de `43A0`). Cela signifie que vous devrez rechercher l'ID sur Google et déterminer l'ID exact de l'appareil, mais AIDA64 peut présenter le nom correctement, ce qui est un peu plus facile pour vous.
 
-### Drive Model
 
-| AIDA64                                                  | Device Manager                                                 |
+### Modèle de disque dur / SSD
+
+| AIDA64                                                  | Gestionnaire de périphériques                                  |
 |:--------------------------------------------------------|:---------------------------------------------------------------|
-| ![](./images/finding-hardware-md/disk-model-aida64.png) | ![](./images/finding-hardware-md/disk-model-devicemanager.png) |
+| ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/disk-model-aida64.72b7da46.png) | ![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/disk-model-devicemanager.41243ee5.png) |
 
-Due to OEMs not providing much details about the drive, you'll need to Google a bit which drive matches up with the displayed name.
+A cause de certains OEM qui ne donnent pas beaucoup de détails à propos de leurs disque dur/SSD, Vous aurez besoin de taper sur google quel disque dur correspond au nom affiché. 
 
-## Finding Hardware using Linux
+## Trouver le matériel avec linux
 
-For finding hardware using Linux, we'll be using a few tools:
+Pour touver le matériel avec linux, on va utilser quelques outils tel que :
 
 * `pciutils`
 * `dmidecode`
 
-Below you'll find a list of commands to run in the terminal, thankfully most Linux distros will come with these tools already installed. If not, you will likely find them in your distro's package manager.
-
-### CPU Model
+Vous trouverez en dessous une liste de commandes à exécuter dans le terminal. Heureusement, la plupart des distro Linux sont livrées avec ces outils déjà installés. Sinon, vous les trouverez probablement dans le gestionnaire de paquets de votre distribution, ou avec un sudo apt-get pour les distro basées sur du débian ;).
+### Modèle de processeur (CPU)
 
 ```sh
 grep -i "model name" /proc/cpuinfo
 ```
 
-### GPU Model
+### Modèle de carte graphique (GPU)
 
 ```sh
 lspci | grep -i --color "vga\|3d\|2d"
 ```
 
-### Chipset Model
+### Modèle de 'Chpiset'
 
 ```sh
 dmidecode -t baseboard
 ```
 
-### Keyboard, Trackpad and  Touchscreen Connection Type
+### Clavier, pavé tactile et type de connexion d'écran tactile
 
 ```sh
 dmesg | grep -i input
 ```
 
-### Audio Codec
+### Codec audios
 
 ```sh
 aplay -l
 ```
 
-### Network Controller models
+### Modèle de controlleurs réseaux
 
-Basic info:
+Infos basiques:
 
 ```sh
 lspci | grep -i network
 ```
 
-More in-depth info:
+Infos plus poussées:
 
 ```sh
 lshw -class network
 ```
 
-### Drive Model
+### Modèle de disque dur / SSD
 
 ```sh
 lshw -class disk -class storage
 ```
 
-## Finding Hardware using OCSysInfo
+## Trouver le matériel avec OCSysInfp
 
-There are 2 methods of obtaining and running OCSysInfo:
+Il y a 2 méthodes pour récupérer et lancer OCSysInfo:
 
-* [Precompiled binaries](https://github.com/KernelWanderers/OCSysInfo/releases)
-* Manually cloning the [repository](https://github.com/KernelWanderers/OCSysInfo)
+* [Code pré-compilé](https://github.com/KernelWanderers/OCSysInfo/releases)
+* [Cloner manuellement le repo](https://github.com/KernelWanderers/OCSysInfo)
 
-::: tip
-We recommend you download [the binaries](https://github.com/KernelWanderers/OCSysInfo/releases), as it is the simplest and easiest method.
+::: astuce
+On vous recommande de télécharger [le code précompilé](https://github.com/KernelWanderers/OCSysInfo/releases), ce qui est la mathode la plus facile.
 
-If you want to learn more about manually cloning the repository, you can check out the OCSysInfo [mini-guide](https://github.com/KernelWanderers/OCSysInfo/tree/main/mini-guide).
+Si vous voulez en apprendfre plus pour cloner le repo manuellement, vous pouvez aller voir le [mini-guide OCSysInfo](https://github.com/KernelWanderers/OCSysInfo/tree/main/mini-guide).
 :::
 
-### Discovering hardware
+### Découvir le matériel
 
-::: warning
-Laptop users: before we start, we advise you to disconnect any external USB devices, as this may lead to ambiguous or unnecessary information collected which may confuse you.
+::: attention
+Utilisateurs sur PC Portables: avant de démarrer, nous vous conseillons de déconnecter tout type de stockage externe USB, car ça peut amener à la récolte d'informations ambiguës ou inutiles qui peuvent vous rendre confus.
 :::
 
-After you've successfully installed and ran the application, you should be greeted with the following screen:
+Une fois que l'application a été corrctement installée et lancée, you should be greeted with the following screen:
 
-![](./images/finding-hardware-md/ocsysinfo-example.png)
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/ocsysinfo-example.b6fb71ae.png)
 
 From here, you can type in `d` and press `ENTER`/`RETURN`, after, you should be greeted with a similar-looking screen:
 
-![](./images/finding-hardware-md/ocsysinfo-hwdisc.png)
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/ocsysinfo-hwdisc.0552a0c3.png)
 
-### CPU Model
+### Modèle de processeur (CPU)
 
-![](./images/finding-hardware-md/cpu-model-ocsysinfo.png)
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/cpu-model-ocsysinfo.6150fbf3.png)
 
 Besides the CPU model, it also lists the CPU's codename, highest SSE version supported and SSSE3 availability.
 
-### GPU Model
+### Modèle de carte graphique (GPU)
 
-![](./images/finding-hardware-md/gpu-model-ocsysinfo.png)
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/gpu-model-ocsysinfo.a45a8727.png)
 
-In this case, the machine has two GPUs:
+Dans ce cas, le PC a 2 GPU (carte graphiques)
 
-* iGPU (Intel UHD Graphics 630)
-* dGPU (AMD Radeon R9 390X)
+* iGPU = garte graphique intégrée : Intel UHD Graphics 630
+* dGPU = carte graphique dédiée : AMD Radeon R9 390X
 
-Besides the model names, it also lists the GPUs' codename, ACPI & PCI path, which you may soon find useful as you progress in your hackintosh journey.
+En dehors les noms de modèles, il liste également le nom de code des GPU, les chemins ACPI et PCI, que vous pourriez bientôt trouver utiles au fur et à mesure de votre progression dans votre parcours hackintosh.
 
-### Keyboard and Trackpad Connection Type
+### Clavier, pavé tactile et type de connexion d'écran tactile
 
-::: details SMBus Trackpad
-![](./images/finding-hardware-md/id-smbus-ocsysinfo.png)
-Trackpad: `SMBus` <br /> Keyboard: `PS/2`
+::: details Pavé tactile SMBus
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/id-smbus-ocsysinfo.b4de10bd.png)
+Pavé tactile : `SMBus` <br /> Clavier: `PS/2`
 
-Credit for providing image: [ThatCopy](https://github.com/ThatCopy)
+Crédit pour cette image: [ThatCopy](https://github.com/ThatCopy)
 :::
 
-::: details I2C Trackpad
-![](./images/finding-hardware-md/id-i2c-ocsysinfo.png)
-Trackpad: `I2C` <br /> Keyboard: `PS/2`
+::: details Pavé tactile I2
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/id-i2c-ocsysinfo.4a83c466.png)
+Pavé tactile: `I2C` <br /> Clavier: `PS/2`
 
-Credit for providing image: [Mahas](https://github.com/Mahas1)
+Crédit pour cette image: [Mahas](https://github.com/Mahas1)
 :::
 
-::: details PS/2 Trackpad
-![](./images/finding-hardware-md/id-ps2-ocsysinfo.png)
-Trackpad: `PS/2` <br /> Keyboard: `PS/2`
+::: details Pavé tactile PS/2
+![]([./images/finding-hardware-md/id-ps2-ocsysinfo.png)](https://dortania.github.io/OpenCore-Install-Guide/assets/img/id-ps2-ocsysinfo.ea64d0ff.png))
+Pavé tactile: `PS/2` <br /> Clavier: `PS/2`
 
-Credit for providing image: [Tasty0](https://github.com/Tasty0)
+Crédit pour cette image: [Tasty0](https://github.com/Tasty0)
 :::
 
-### Audio codec
+### Codec audios
 
-![](./images/finding-hardware-md/audio-codec-ocsysinfo.png)
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/audio-codec-ocsysinfo.b196d284.png)
 
-### Network models
+### Modèles réseaux
 
-![](./images/finding-hardware-md/network-model-ocsysinfo.png)
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/network-model-ocsysinfo.7095f7ef.png)
 
-### Drive model
+### Modèle de disque dur / SSD
 
-![](./images/finding-hardware-md/drive-model-ocsysinfo.png)
+![](https://dortania.github.io/OpenCore-Install-Guide/assets/img/drive-model-ocsysinfo.40e31cef.png)
